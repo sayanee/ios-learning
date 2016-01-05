@@ -10,7 +10,7 @@ import UIKit
 
 class HappinessViewController: UIViewController, FaceViewDataSource {
     
-    var happiness: Int = 25 { // 0 = very sad, 100 = ecstatic
+    var happiness: Int = 60 { // 0 = very sad, 100 = ecstatic
         didSet {
             happiness = min(max(happiness, 0), 100)
             print("happiness = \(happiness)")
