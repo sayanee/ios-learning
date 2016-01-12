@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="67"/>
+            <point key="canvasLocation" x="842" y="67"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nwe-tH-Dgp">
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="u2A-uA-Rp1"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0fX-fe-xPu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lY5-ZB-ctR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,6 +135,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="y0a-51-acr"/>
+        <segue reference="gat-19-CG7"/>
     </inferredMetricsTieBreakers>
 </document>
