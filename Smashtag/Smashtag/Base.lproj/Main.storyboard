@@ -44,7 +44,18 @@
                             <outlet property="delegate" destination="4Qt-Bs-Ns4" id="FfH-0E-1qw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fDd-53-e09"/>
+                    <navigationItem key="navigationItem" id="fDd-53-e09">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter search query" textAlignment="natural" minimumFontSize="17" id="TUs-Qr-kCX">
+                            <rect key="frame" x="20" y="7" width="560" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchTextField" destination="TUs-Qr-kCX" id="BUz-xi-ggZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejD-qN-1A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

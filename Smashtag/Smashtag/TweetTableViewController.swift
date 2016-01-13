@@ -8,32 +8,52 @@
 
 import UIKit
 
-class TweetTableViewController: UITableViewController {
+class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var tweets = [[Tweet]]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let request = TwitterRequest(search: "#stanford", count: 100)
-        
-        request.fetchTweets { (newTweets) -> Void in
-            dispatch_async(dispatch_get_main_queue()) { () 
-                if newTweets.count > 0 {
-                    self.tweets.insert(newTweets, atIndex: 0)
-                    self.tableView.reloadData()
+    
+    var searchText: String? = "#stanford" {
+        didSet {
+            searchTextField?.text = searchText
+            tweets.removeAll()
+            tableView.reloadData()
+            refresh()
+        }
+    }
+    
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+            searchTextField.text = searchText
+        }
+    }
+    
+    func refresh() {
+        if searchText != nil {
+            let request = TwitterRequest(search: searchText!, count: 100)
+            request.fetchTweets { (newTweets) -> Void in
+                dispatch_async(dispatch_get_main_queue()) { ()
+                    if newTweets.count > 0 {
+                        self.tweets.insert(newTweets, atIndex: 0)
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == searchTextField {
+            textField.resignFirstResponder()
+            searchText = textField.text
+        }
+        return true
     }
 
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        refresh()
+    }
 
     // MARK: - UITableViewDataSource
 
