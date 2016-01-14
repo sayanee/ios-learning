@@ -75,6 +75,12 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fSc-t5-AXJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="4Qt-Bs-Ns4" eventType="valueChanged" id="kUK-Xh-Pgc"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="searchTextField" destination="TUs-Qr-kCX" id="BUz-xi-ggZ"/>
                     </connections>
