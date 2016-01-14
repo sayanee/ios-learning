@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4BA4C41C475AE2002EF27A /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BA4C31C475AE2002EF27A /* TweetTableViewCell.swift */; };
 		AB6E7F831C45FE6E00E3329F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7F821C45FE6E00E3329F /* AppDelegate.swift */; };
 		AB6E7F851C45FE6E00E3329F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7F841C45FE6E00E3329F /* ViewController.swift */; };
 		AB6E7F881C45FE6E00E3329F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6E7F861C45FE6E00E3329F /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4BA4C31C475AE2002EF27A /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		AB6E7F7F1C45FE6E00E3329F /* Smashtag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smashtag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6E7F821C45FE6E00E3329F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6E7F841C45FE6E00E3329F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				AB6E7F821C45FE6E00E3329F /* AppDelegate.swift */,
 				AB6E7F841C45FE6E00E3329F /* ViewController.swift */,
 				AB6E7F861C45FE6E00E3329F /* Main.storyboard */,
+				AB4BA4C31C475AE2002EF27A /* TweetTableViewCell.swift */,
 				AB6E7FB01C4601CE00E3329F /* TweetTableViewController.swift */,
 				AB6E7F891C45FE6E00E3329F /* Assets.xcassets */,
 				AB6E7F8B1C45FE6E00E3329F /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 				AB6E7F831C45FE6E00E3329F /* AppDelegate.swift in Sources */,
 				AB6E7FB81C46030A00E3329F /* TwitterRequest.swift in Sources */,
 				AB6E7FBA1C46031D00E3329F /* User.swift in Sources */,
+				AB4BA4C41C475AE2002EF27A /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +519,7 @@
 				AB6E7FA91C45FE6E00E3329F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB6E7FAA1C45FE6E00E3329F /* Build configuration list for PBXNativeTarget "SmashtagTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				AB6E7FAC1C45FE6E00E3329F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB6E7FAD1C45FE6E00E3329F /* Build configuration list for PBXNativeTarget "SmashtagUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				AB6E7FAF1C45FE6E00E3329F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

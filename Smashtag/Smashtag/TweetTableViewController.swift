@@ -14,7 +14,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var searchText: String? = "#stanford" {
         didSet {
-            searchTextField?.text = searchText
+            searchTextField?.text = searchText 
             tweets.removeAll()
             tableView.reloadData()
             refresh()
@@ -70,12 +70,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! TweetTableViewCell
 
         // Configure the cell...
-        let tweet = tweets[indexPath.section][indexPath.row]
-        cell.textLabel?.text = tweet.text
-        cell.detailTextLabel?.text = tweet.user.name
+        cell.tweet = tweets[indexPath.section][indexPath.row]
 
         return cell
     }
