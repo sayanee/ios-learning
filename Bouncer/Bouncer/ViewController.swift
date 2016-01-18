@@ -34,6 +34,19 @@ class ViewController: UIViewController {
             redBlock?.backgroundColor = UIColor.redColor()
             bouncer.addBlock(redBlock!)
         }
+        
+        let motionManager = AppDelegate.Motion.Manager
+        if motionManager.accelerometerAvailable {
+            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) -> Void in
+                self.bouncer.gravity.gravityDirection = CGVector(dx: (data?.acceleration.x)!, dy: -(data?.acceleration.y)!)
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        AppDelegate.Motion.Manager.stopAccelerometerUpdates()
     }
     
     func addBlock() -> UIView {
