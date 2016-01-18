@@ -20,7 +20,7 @@ class DropitBehavior: UIDynamicBehavior {
     
     lazy var dropBehavior: UIDynamicItemBehavior = {
        let lazilyCreatedDropBehavior = UIDynamicItemBehavior()
-        lazilyCreatedDropBehavior.allowsRotation = false
+        lazilyCreatedDropBehavior.allowsRotation = true
         lazilyCreatedDropBehavior.elasticity = 0.75
 
         return lazilyCreatedDropBehavior
@@ -31,6 +31,11 @@ class DropitBehavior: UIDynamicBehavior {
         addChildBehavior(gravity)
         addChildBehavior(collider)
         addChildBehavior(dropBehavior)
+    }
+    
+    func addBarrier(path: UIBezierPath, named name: String) {
+        collider.removeBoundaryWithIdentifier(name)
+        collider.addBoundaryWithIdentifier(name, forPath: path)
     }
     
     func addDrop(drop: UIView) {
