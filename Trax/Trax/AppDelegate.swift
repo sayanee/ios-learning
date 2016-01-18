@@ -13,11 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(app: UIApplication, openURL url: NSURL) -> Bool {
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         print("url: \(url) ")
         return true
     }
-
 
 }
 
