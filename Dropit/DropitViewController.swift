@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DropitViewController: UIViewController {
+class DropitViewController: UIViewController, UIDynamicAnimatorDelegate {
 
     @IBAction func drop(sender: UITapGestureRecognizer) {
         drop()
@@ -20,8 +20,13 @@ class DropitViewController: UIViewController {
     
     var dropsPerRow = 10
     
+    func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
+        removeCompletedRow()
+    }
+    
     lazy var animator: UIDynamicAnimator = {
         let lazilyCreatedDynamicAnimator = UIDynamicAnimator(referenceView: self.gameView)
+        lazilyCreatedDynamicAnimator.delegate = self
         return lazilyCreatedDynamicAnimator
     }()
     
@@ -43,6 +48,36 @@ class DropitViewController: UIViewController {
         dropView.backgroundColor = UIColor.random
         
         dropitBehavior.addDrop(dropView)
+    }
+    
+    func removeCompletedRow() {
+        var dropsToRemove = [UIView]()
+        var dropFrame = CGRect(x: 0, y: gameView.frame.maxY, width: dropSize.width, height: dropSize.height)
+        
+        repeat {
+            dropFrame.origin.y -= dropSize.height
+            dropFrame.origin.x = 0
+            var dropsFound = [UIView]()
+            var rowIsCompleted = true
+            
+            for _ in 0 ..< dropsPerRow {
+                if let hitView = gameView.hitTest(CGPoint(x: dropFrame.midX, y: dropFrame.midY), withEvent: nil) {
+                    dropsFound.append(hitView)
+                } else {
+                    rowIsCompleted = false
+                }
+                
+                dropFrame.origin.x += dropSize.width
+            }
+            
+            if rowIsCompleted {
+                dropsToRemove += dropsFound
+            }
+        } while dropsToRemove.count == 0 && dropFrame.origin.y > 0
+        
+        for drop in dropsToRemove {
+            dropitBehavior.removeDrop(drop)
+        }
     }
 }
 
