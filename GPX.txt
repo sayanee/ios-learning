@@ -1,0 +1,35 @@
+<!--  Copy at the bottom of Info.plist for Trax project -->
+
+<key>CFBundleDocumentTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeIconFiles</key>
+    <array/>
+    <key>CFBundleTypeName</key>
+    <string>GPX File</string>
+    <key>LSItemContentTypes</key>
+    <array>
+      <string>edu.stanford.cs193p.gpx</string>
+    </array>
+  </dict>
+</array>
+<key>UTImportedTypeDeclarations</key>
+<array>
+  <dict>
+    <key>UTTypeConformsTo</key>
+    <array>
+      <string>public.xml</string>
+    </array>
+    <key>UTTypeDescription</key>
+    <string>GPX File</string>
+    <key>UTTypeIdentifier</key>
+    <string>edu.stanford.cs193p.gpx</string>
+    <key>UTTypeTagSpecification</key>
+    <dict>
+      <key>public.filename-extension</key>
+      <array>
+        <string>pgx</string>
+      </array>
+    </dict>
+  </dict>
+</array>
