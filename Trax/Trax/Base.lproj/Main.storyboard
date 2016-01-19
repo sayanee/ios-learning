@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GPXViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,22 +23,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-Ub-Fyx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oKd-Ub-Fyx" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="0pP-H7-mrw"/>
                             <constraint firstItem="w6b-Wz-Nix" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9Gb-ow-Oi2"/>
+                            <constraint firstItem="oKd-Ub-Fyx" firstAttribute="leading" secondItem="w6b-Wz-Nix" secondAttribute="leading" id="E9v-bg-kXT"/>
                             <constraint firstItem="w6b-Wz-Nix" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NLG-wH-m8d"/>
                             <constraint firstAttribute="trailing" secondItem="w6b-Wz-Nix" secondAttribute="trailing" id="X8v-y7-Sfx"/>
                             <constraint firstItem="w6b-Wz-Nix" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gAU-yH-X5u"/>
+                            <constraint firstItem="oKd-Ub-Fyx" firstAttribute="trailing" secondItem="w6b-Wz-Nix" secondAttribute="trailing" id="oz6-PJ-tmi"/>
+                            <constraint firstItem="oKd-Ub-Fyx" firstAttribute="top" secondItem="w6b-Wz-Nix" secondAttribute="top" id="yUg-fU-Zjz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="w6b-Wz-Nix" id="HkE-xo-g70"/>
+                        <outlet property="mapView" destination="oKd-Ub-Fyx" id="oDB-wa-kPR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="453" y="389"/>
+            <point key="canvasLocation" x="475" y="399"/>
         </scene>
     </scenes>
 </document>
