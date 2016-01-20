@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -59,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1287" y="399"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Waypoint View Controller-->
         <scene sceneID="cPy-d7-ock">
             <objects>
-                <viewController id="Gc7-cN-Z1t" sceneMemberID="viewController">
+                <viewController id="Gc7-cN-Z1t" customClass="EditWaypointViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fpC-cH-nV5"/>
                         <viewControllerLayoutGuide type="bottom" id="7Er-N2-vPb"/>
@@ -70,8 +71,51 @@
                     <view key="view" contentMode="scaleToFill" id="zmH-hn-svd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-oB-Z4o">
+                                <rect key="frame" x="79" y="28" width="501" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
+                                <rect key="frame" x="79" y="66" width="501" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-zg-HgG">
+                                <rect key="frame" x="20" y="37" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-7g-XBM">
+                                <rect key="frame" x="20" y="75" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djt-7g-XBM" firstAttribute="top" secondItem="Ajo-zg-HgG" secondAttribute="bottom" constant="17" id="AGd-Ei-ahN"/>
+                            <constraint firstItem="Ajo-zg-HgG" firstAttribute="top" secondItem="fpC-cH-nV5" secondAttribute="bottom" constant="17" id="OxZ-aa-v2a"/>
+                            <constraint firstItem="Ajo-zg-HgG" firstAttribute="bottom" secondItem="XdM-oB-Z4o" secondAttribute="bottom" id="WTx-4Q-xxD"/>
+                            <constraint firstItem="u2g-iC-F4V" firstAttribute="leading" secondItem="XdM-oB-Z4o" secondAttribute="leading" id="Yr3-m9-hVG"/>
+                            <constraint firstItem="XdM-oB-Z4o" firstAttribute="top" secondItem="fpC-cH-nV5" secondAttribute="bottom" constant="8" symbolic="YES" id="auU-nb-9c6"/>
+                            <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="zmH-hn-svd" secondAttribute="leadingMargin" id="dpr-4N-B9Y"/>
+                            <constraint firstItem="XdM-oB-Z4o" firstAttribute="trailing" secondItem="u2g-iC-F4V" secondAttribute="trailing" id="i2Q-gJ-Ptq"/>
+                            <constraint firstItem="u2g-iC-F4V" firstAttribute="top" secondItem="XdM-oB-Z4o" secondAttribute="bottom" constant="8" symbolic="YES" id="nCe-kc-em1"/>
+                            <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="leading" id="rWK-ZX-FvA"/>
+                            <constraint firstItem="Ajo-zg-HgG" firstAttribute="trailing" secondItem="Djt-7g-XBM" secondAttribute="trailing" id="vDG-Fm-6ZL"/>
+                            <constraint firstItem="XdM-oB-Z4o" firstAttribute="trailing" secondItem="zmH-hn-svd" secondAttribute="trailingMargin" id="vl3-B6-UQY"/>
+                            <constraint firstItem="u2g-iC-F4V" firstAttribute="bottom" secondItem="Djt-7g-XBM" secondAttribute="bottom" id="yP6-ha-fT8"/>
+                            <constraint firstItem="XdM-oB-Z4o" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="trailing" constant="14" id="zun-31-IkD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoTextField" destination="u2g-iC-F4V" id="sRF-br-faM"/>
+                        <outlet property="nameTextField" destination="XdM-oB-Z4o" id="RmK-OT-CKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGX-Kg-INq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
