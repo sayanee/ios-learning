@@ -86,6 +86,16 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
         performSegueWithIdentifier(Constants.ShowImageSegue, sender: view)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.ShowImageSegue {
+            if let waypoint = (sender as? MKAnnotationView)?.annotation as? GPX.Waypoint {
+                let ivc = segue.destinationViewController as! ImageViewController
+                ivc.imageURL = waypoint.imageURL
+                ivc.title = waypoint.name
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,7 +109,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
             }
         }
         
-        gpxURL = NSURL(string: "https://dl.dropboxusercontent.com/u/57433/Stanford.gpx")
+        gpxURL = NSURL(string: "https://dl.dropboxusercontent.com/u/57433/Vacation.gpx")
     }
 }
 
