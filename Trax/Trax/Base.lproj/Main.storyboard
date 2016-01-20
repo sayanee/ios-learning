@@ -47,6 +47,7 @@
                     <connections>
                         <outlet property="mapView" destination="oKd-Ub-Fyx" id="oDB-wa-kPR"/>
                         <segue destination="lE7-Hx-CbG" kind="show" identifier="Show Image" id="F4a-HP-aJL"/>
+                        <segue destination="Gc7-cN-Z1t" kind="presentation" identifier="Edit Waypoint" id="Ayj-oa-0tG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -57,6 +58,24 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1287" y="399"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cPy-d7-ock">
+            <objects>
+                <viewController id="Gc7-cN-Z1t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fpC-cH-nV5"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Er-N2-vPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zmH-hn-svd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGX-Kg-INq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="-314"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="WDT-f7-Dlx">

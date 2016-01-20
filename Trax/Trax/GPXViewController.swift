@@ -51,6 +51,8 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
         static let LeftCalloutFrame = CGRect(x:0, y:0, width: 59, height: 59)
         static let AnnotationViewReuseIdentifier = "waypoint"
         static let ShowImageSegue = "Show Image"
+        static let EditWaypointSegue = "Edit Waypoint"
+        static let EditWaypointPopoverWidth: CGFloat = 320
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -74,9 +76,9 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
                 
             }
             
-//            if waypoint.imageURL != nil {
-//                view?.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
-//            }
+            if annotation is EditableWaypoint {
+                view?.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
+            }
         }
         
         return view 
@@ -96,7 +98,14 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegueWithIdentifier(Constants.ShowImageSegue, sender: view)
+        if (control as? UIButton)?.buttonType == UIButtonType.DetailDisclosure {
+            mapView.deselectAnnotation(view.annotation, animated: false)
+            performSegueWithIdentifier(Constants.EditWaypointSegue, sender: view)
+        } else if let waypoint = view.annotation as? GPX.Waypoint {
+            if waypoint.imageURL != nil {
+                performSegueWithIdentifier(Constants.ShowImageSegue, sender: view)
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
