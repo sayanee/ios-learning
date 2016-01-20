@@ -36,7 +36,7 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
     @IBAction func addWaypoint(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
             let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
-            let waypoint = GPX.Waypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
             
             waypoint.name = "Dropped"
             mapView.addAnnotation(waypoint)
@@ -62,6 +62,8 @@ class GPXViewController: UIViewController, MKMapViewDelegate {
         } else {
             view!.annotation = annotation
         }
+        
+        view!.draggable = annotation is EditableWaypoint
         
         view!.leftCalloutAccessoryView = nil
         view?.rightCalloutAccessoryView = nil
