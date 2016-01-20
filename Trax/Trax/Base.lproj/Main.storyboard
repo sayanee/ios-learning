@@ -75,31 +75,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-oB-Z4o">
-                                <rect key="frame" x="79" y="28" width="501" height="30"/>
+                                <rect key="frame" x="79" y="72" width="501" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
+                                <rect key="frame" x="79" y="110" width="465" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-zg-HgG">
-                                <rect key="frame" x="20" y="37" width="45" height="21"/>
+                                <rect key="frame" x="20" y="81" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-7g-XBM">
-                                <rect key="frame" x="20" y="75" width="45" height="21"/>
+                                <rect key="frame" x="20" y="119" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hof-8s-K60">
+                                <rect key="frame" x="547" y="110" width="38" height="30"/>
+                                <state key="normal" image="Camera"/>
+                                <connections>
+                                    <action selector="takePhoto" destination="Gc7-cN-Z1t" eventType="touchUpInside" id="2J6-pV-M9r"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cx-8N-uTN">
-                                <rect key="frame" x="20" y="104" width="560" height="476"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="148" width="560" height="432"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
-                                <rect key="frame" x="79" y="66" width="501" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7cx-8N-uTN" firstAttribute="top" secondItem="u2g-iC-F4V" secondAttribute="bottom" constant="8" symbolic="YES" id="3SP-CK-gpU"/>
@@ -108,16 +114,18 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7cx-8N-uTN" secondAttribute="trailing" id="QCm-8j-RbK"/>
                             <constraint firstItem="7Er-N2-vPb" firstAttribute="top" secondItem="7cx-8N-uTN" secondAttribute="bottom" constant="20" id="T4W-qG-OzY"/>
                             <constraint firstItem="Ajo-zg-HgG" firstAttribute="bottom" secondItem="XdM-oB-Z4o" secondAttribute="bottom" id="WTx-4Q-xxD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hof-8s-K60" secondAttribute="trailing" constant="-5" id="Wyw-Bs-L3K"/>
                             <constraint firstItem="u2g-iC-F4V" firstAttribute="leading" secondItem="XdM-oB-Z4o" secondAttribute="leading" id="Yr3-m9-hVG"/>
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="top" secondItem="fpC-cH-nV5" secondAttribute="bottom" constant="8" symbolic="YES" id="auU-nb-9c6"/>
                             <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="zmH-hn-svd" secondAttribute="leadingMargin" id="dpr-4N-B9Y"/>
-                            <constraint firstItem="XdM-oB-Z4o" firstAttribute="trailing" secondItem="u2g-iC-F4V" secondAttribute="trailing" id="i2Q-gJ-Ptq"/>
+                            <constraint firstItem="Hof-8s-K60" firstAttribute="leading" secondItem="u2g-iC-F4V" secondAttribute="trailing" constant="3" id="hHJ-6o-UOw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7cx-8N-uTN" secondAttribute="leading" id="l3Y-pQ-33a"/>
                             <constraint firstItem="u2g-iC-F4V" firstAttribute="top" secondItem="XdM-oB-Z4o" secondAttribute="bottom" constant="8" symbolic="YES" id="nCe-kc-em1"/>
                             <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="leading" id="rWK-ZX-FvA"/>
                             <constraint firstItem="Ajo-zg-HgG" firstAttribute="trailing" secondItem="Djt-7g-XBM" secondAttribute="trailing" id="vDG-Fm-6ZL"/>
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="trailing" secondItem="zmH-hn-svd" secondAttribute="trailingMargin" id="vl3-B6-UQY"/>
                             <constraint firstItem="u2g-iC-F4V" firstAttribute="bottom" secondItem="Djt-7g-XBM" secondAttribute="bottom" id="yP6-ha-fT8"/>
+                            <constraint firstItem="Hof-8s-K60" firstAttribute="centerY" secondItem="u2g-iC-F4V" secondAttribute="centerY" id="zdP-Zx-Q7w"/>
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="trailing" constant="14" id="zun-31-IkD"/>
                         </constraints>
                     </view>
@@ -213,7 +221,10 @@
             <point key="canvasLocation" x="1261" y="-298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="38" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cEw-jU-E1I"/>
+        <segue reference="GNO-2Z-pw8"/>
     </inferredMetricsTieBreakers>
 </document>

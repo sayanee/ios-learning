@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class EditWaypointViewController: UIViewController, UITextFieldDelegate {
+class EditWaypointViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var waypointToEdit: EditableWaypoint? {
         didSet {
@@ -16,6 +17,35 @@ class EditWaypointViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    
+    @IBAction func takePhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .Camera
+            
+            picker.mediaTypes = [kUTTypeImage as String]
+            picker.delegate = self
+            picker.allowsEditing = true
+            presentViewController(picker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        var image = info[UIImagePickerControllerEditedImage] as? UIImage
+        // TODO Remaining L16 46:50
+        if image == nil {
+            image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        }
+        
+        imageView.image = image
+        makeRoomForImage()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBOutlet weak var nameTextField: UITextField! { didSet { nameTextField.delegate = self } }
     @IBOutlet weak var infoTextField: UITextField! { didSet { infoTextField.delegate = self } }
     
