@@ -79,11 +79,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
-                                <rect key="frame" x="79" y="66" width="501" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-zg-HgG">
                                 <rect key="frame" x="20" y="37" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -96,15 +91,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cx-8N-uTN">
+                                <rect key="frame" x="20" y="104" width="560" height="476"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
+                                <rect key="frame" x="79" y="66" width="501" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="7cx-8N-uTN" firstAttribute="top" secondItem="u2g-iC-F4V" secondAttribute="bottom" constant="8" symbolic="YES" id="3SP-CK-gpU"/>
                             <constraint firstItem="Djt-7g-XBM" firstAttribute="top" secondItem="Ajo-zg-HgG" secondAttribute="bottom" constant="17" id="AGd-Ei-ahN"/>
                             <constraint firstItem="Ajo-zg-HgG" firstAttribute="top" secondItem="fpC-cH-nV5" secondAttribute="bottom" constant="17" id="OxZ-aa-v2a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7cx-8N-uTN" secondAttribute="trailing" id="QCm-8j-RbK"/>
+                            <constraint firstItem="7Er-N2-vPb" firstAttribute="top" secondItem="7cx-8N-uTN" secondAttribute="bottom" constant="20" id="T4W-qG-OzY"/>
                             <constraint firstItem="Ajo-zg-HgG" firstAttribute="bottom" secondItem="XdM-oB-Z4o" secondAttribute="bottom" id="WTx-4Q-xxD"/>
                             <constraint firstItem="u2g-iC-F4V" firstAttribute="leading" secondItem="XdM-oB-Z4o" secondAttribute="leading" id="Yr3-m9-hVG"/>
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="top" secondItem="fpC-cH-nV5" secondAttribute="bottom" constant="8" symbolic="YES" id="auU-nb-9c6"/>
                             <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="zmH-hn-svd" secondAttribute="leadingMargin" id="dpr-4N-B9Y"/>
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="trailing" secondItem="u2g-iC-F4V" secondAttribute="trailing" id="i2Q-gJ-Ptq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7cx-8N-uTN" secondAttribute="leading" id="l3Y-pQ-33a"/>
                             <constraint firstItem="u2g-iC-F4V" firstAttribute="top" secondItem="XdM-oB-Z4o" secondAttribute="bottom" constant="8" symbolic="YES" id="nCe-kc-em1"/>
                             <constraint firstItem="Djt-7g-XBM" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="leading" id="rWK-ZX-FvA"/>
                             <constraint firstItem="Ajo-zg-HgG" firstAttribute="trailing" secondItem="Djt-7g-XBM" secondAttribute="trailing" id="vDG-Fm-6ZL"/>
@@ -121,6 +129,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageViewController" destination="7cx-8N-uTN" id="UTh-Pn-zMT"/>
                         <outlet property="infoTextField" destination="u2g-iC-F4V" id="sRF-br-faM"/>
                         <outlet property="nameTextField" destination="XdM-oB-Z4o" id="RmK-OT-CKi"/>
                     </connections>

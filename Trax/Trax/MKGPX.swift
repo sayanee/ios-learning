@@ -17,6 +17,9 @@ class EditableWaypoint:GPX.Waypoint {
             longitude = newValue.longitude
         }
     }
+    
+    override var thumbnailURL: NSURL? { return imageURL }
+    override var imageURL: NSURL? { return links.first?.url }
 }
 
 extension GPX.Waypoint: MKAnnotation {

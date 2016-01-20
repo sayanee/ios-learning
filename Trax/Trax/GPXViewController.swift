@@ -37,8 +37,8 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
         if sender.state == UIGestureRecognizerState.Began {
             let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
             let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
-            
             waypoint.name = "Dropped"
+            waypoint.links.append(GPX.Link(href: "https://web.stanford.edu/class/cs193p/Images/Panorama.jpg"))
             mapView.addAnnotation(waypoint)
         }
     }
