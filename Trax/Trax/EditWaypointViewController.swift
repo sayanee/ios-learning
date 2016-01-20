@@ -24,6 +24,50 @@ class EditWaypointViewController: UIViewController, UITextFieldDelegate {
         infoTextField?.text = waypointToEdit?.info
     }
     
+    
+    @IBAction func done(sender: UIBarButtonItem) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        observeTextFields()
+    }
+    
+    var ntfObserver: NSObjectProtocol?
+    var itfObserver: NSObjectProtocol?
+    
+    func observeTextFields() {
+        let center = NSNotificationCenter.defaultCenter()
+        let queue = NSOperationQueue.mainQueue()
+        
+        ntfObserver = center.addObserverForName(UITextFieldTextDidChangeNotification,
+            object: nameTextField, queue: queue) { notification in
+                if let waypoint = self.waypointToEdit {
+                    waypoint.name = self.nameTextField.text
+                }
+        }
+        
+        itfObserver = center.addObserverForName(UITextFieldTextDidChangeNotification,
+            object: infoTextField, queue: queue) { notification in
+                if let waypoint = self.waypointToEdit {
+                    waypoint.info = self.infoTextField.text
+                }
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let observer = ntfObserver {
+            NSNotificationCenter.defaultCenter().removeObserver(observer)
+        }
+        
+        if let observer = itfObserver {
+            NSNotificationCenter.defaultCenter().removeObserver(observer)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.becomeFirstResponder()

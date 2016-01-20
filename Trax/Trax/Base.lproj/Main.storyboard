@@ -48,7 +48,7 @@
                     <connections>
                         <outlet property="mapView" destination="oKd-Ub-Fyx" id="oDB-wa-kPR"/>
                         <segue destination="lE7-Hx-CbG" kind="show" identifier="Show Image" id="F4a-HP-aJL"/>
-                        <segue destination="Gc7-cN-Z1t" kind="presentation" identifier="Edit Waypoint" id="Ayj-oa-0tG"/>
+                        <segue destination="zki-OJ-Hbh" kind="presentation" identifier="Edit Waypoint" id="Ayj-oa-0tG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="1287" y="399"/>
         </scene>
-        <!--Edit Waypoint View Controller-->
+        <!--Edit Waypoint-->
         <scene sceneID="cPy-d7-ock">
             <objects>
                 <viewController id="Gc7-cN-Z1t" customClass="EditWaypointViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,23 +72,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-oB-Z4o">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-oB-Z4o">
                                 <rect key="frame" x="79" y="28" width="501" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u2g-iC-F4V">
                                 <rect key="frame" x="79" y="66" width="501" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-zg-HgG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-zg-HgG">
                                 <rect key="frame" x="20" y="37" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-7g-XBM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djt-7g-XBM">
                                 <rect key="frame" x="20" y="75" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -112,6 +112,13 @@
                             <constraint firstItem="XdM-oB-Z4o" firstAttribute="leading" secondItem="Ajo-zg-HgG" secondAttribute="trailing" constant="14" id="zun-31-IkD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Waypoint" id="Gww-SE-Nxe">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Ser-eY-jeB">
+                            <connections>
+                                <action selector="done:" destination="Gc7-cN-Z1t" id="6fT-cH-Usc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="infoTextField" destination="u2g-iC-F4V" id="sRF-br-faM"/>
                         <outlet property="nameTextField" destination="XdM-oB-Z4o" id="RmK-OT-CKi"/>
@@ -119,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGX-Kg-INq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047" y="-314"/>
+            <point key="canvasLocation" x="2859" y="-314"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="WDT-f7-Dlx">
@@ -176,6 +183,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UW6-E7-JSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="475" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cx7-7H-XRa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zki-OJ-Hbh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="biV-pc-moq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gc7-cN-Z1t" kind="relationship" relationship="rootViewController" id="GNO-2Z-pw8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKj-iE-JVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="-314"/>
         </scene>
     </scenes>
 </document>
