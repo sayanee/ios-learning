@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="2073" y="-298"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Waypoint Image View Controller-->
         <scene sceneID="WDT-f7-Dlx">
             <objects>
-                <viewController id="lE7-Hx-CbG" customClass="ImageViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lE7-Hx-CbG" customClass="WaypointImageViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tO7-D0-fZ6"/>
                         <viewControllerLayoutGuide type="bottom" id="OfN-5P-0Ra"/>
@@ -158,21 +158,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gP2-fd-rJE">
-                                <rect key="frame" x="294" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-JP-48e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjX-xf-pDa">
+                                <rect key="frame" x="380" y="380" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LYh-pe-4cr"/>
+                                    <constraint firstAttribute="height" constant="200" id="k7E-AA-btR"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="K0E-KX-mee" kind="embed" identifier="Embed Map" id="oEh-jM-io7"/>
+                                </connections>
+                            </containerView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gP2-fd-rJE">
+                                <rect key="frame" x="294" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EAZ-JP-48e" firstAttribute="top" secondItem="6JY-N0-ZCO" secondAttribute="top" id="2dh-73-d1X"/>
-                            <constraint firstItem="gP2-fd-rJE" firstAttribute="centerY" secondItem="EAZ-JP-48e" secondAttribute="centerY" id="CaG-yH-GRs"/>
-                            <constraint firstAttribute="trailing" secondItem="EAZ-JP-48e" secondAttribute="trailing" id="Lco-Bd-2or"/>
-                            <constraint firstItem="gP2-fd-rJE" firstAttribute="leading" secondItem="6JY-N0-ZCO" secondAttribute="leading" constant="294" id="WA6-f9-yU7"/>
-                            <constraint firstItem="EAZ-JP-48e" firstAttribute="leading" secondItem="6JY-N0-ZCO" secondAttribute="leading" id="Waf-ze-HQI"/>
-                            <constraint firstItem="EAZ-JP-48e" firstAttribute="bottom" secondItem="OfN-5P-0Ra" secondAttribute="top" id="dfu-pb-Xmc"/>
+                            <constraint firstItem="EAZ-JP-48e" firstAttribute="bottom" secondItem="OfN-5P-0Ra" secondAttribute="top" id="9tH-3w-xNJ"/>
+                            <constraint firstItem="gP2-fd-rJE" firstAttribute="leading" secondItem="6JY-N0-ZCO" secondAttribute="leading" constant="294" id="HQz-SZ-VZv"/>
+                            <constraint firstItem="gP2-fd-rJE" firstAttribute="centerY" secondItem="EAZ-JP-48e" secondAttribute="centerY" id="RLL-FW-NmT"/>
+                            <constraint firstItem="jjX-xf-pDa" firstAttribute="trailing" secondItem="6JY-N0-ZCO" secondAttribute="trailingMargin" id="a3k-f9-vZc"/>
+                            <constraint firstAttribute="trailing" secondItem="EAZ-JP-48e" secondAttribute="trailing" id="acc-XX-Ror"/>
+                            <constraint firstItem="jjX-xf-pDa" firstAttribute="leading" secondItem="6JY-N0-ZCO" secondAttribute="leading" constant="380" id="dfR-hy-J1X"/>
+                            <constraint firstItem="EAZ-JP-48e" firstAttribute="leading" secondItem="6JY-N0-ZCO" secondAttribute="leading" id="hiK-OT-uDB"/>
+                            <constraint firstItem="EAZ-JP-48e" firstAttribute="top" secondItem="6JY-N0-ZCO" secondAttribute="top" id="mx2-Vr-HhI"/>
+                            <constraint firstItem="jjX-xf-pDa" firstAttribute="top" secondItem="tO7-D0-fZ6" secondAttribute="bottom" constant="316" id="qx2-ZG-2wc"/>
+                            <constraint firstAttribute="bottom" secondItem="jjX-xf-pDa" secondAttribute="bottom" constant="20" symbolic="YES" id="sba-rY-GRW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -219,6 +233,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKj-iE-JVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1261" y="-298"/>
+        </scene>
+        <!--Simple Map View Controller-->
+        <scene sceneID="1em-PB-pot">
+            <objects>
+                <viewController id="K0E-KX-mee" customClass="SimpleMapViewController" customModule="Trax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="161-qA-xIK">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2fh-jb-xvZ">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GeW-VO-pr9"/>
+                                    <constraint firstAttribute="height" constant="200" id="wlL-ls-HY1"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="bottom" secondItem="161-qA-xIK" secondAttribute="bottomMargin" id="2Lm-ya-c6I"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="top" secondItem="161-qA-xIK" secondAttribute="top" id="8TY-mK-uyv"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="centerY" secondItem="161-qA-xIK" secondAttribute="centerY" id="9GK-3D-yWW"/>
+                            <constraint firstAttribute="trailing" secondItem="2fh-jb-xvZ" secondAttribute="trailing" id="OIz-NK-YC8"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="leading" secondItem="161-qA-xIK" secondAttribute="leading" id="SSP-jk-Zpg"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="bottom" secondItem="161-qA-xIK" secondAttribute="bottomMargin" id="URS-Nj-icw"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="centerX" secondItem="161-qA-xIK" secondAttribute="centerX" id="Yad-dD-iev"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="top" secondItem="161-qA-xIK" secondAttribute="top" id="ZAC-py-Ib6"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="top" secondItem="161-qA-xIK" secondAttribute="topMargin" id="dmc-L0-l0B"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="top" secondItem="161-qA-xIK" secondAttribute="topMargin" id="heH-7z-oIz"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="top" secondItem="161-qA-xIK" secondAttribute="top" id="i3r-ON-ese"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="leading" secondItem="161-qA-xIK" secondAttribute="leading" id="iAX-EA-YoY"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="leading" secondItem="161-qA-xIK" secondAttribute="leading" id="kKp-os-2cA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2fh-jb-xvZ" secondAttribute="trailing" constant="-16" id="lcm-f5-x6A"/>
+                            <constraint firstAttribute="bottom" secondItem="2fh-jb-xvZ" secondAttribute="bottom" id="xnC-wN-qST"/>
+                            <constraint firstItem="2fh-jb-xvZ" firstAttribute="leading" secondItem="161-qA-xIK" secondAttribute="leadingMargin" constant="-16" id="yYW-Uc-346"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="2fh-jb-xvZ" id="cAR-mK-FDu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7h-Qm-Gj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2632" y="399"/>
         </scene>
     </scenes>
     <resources>

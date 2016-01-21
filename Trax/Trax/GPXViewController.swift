@@ -86,11 +86,16 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         if let waypoint = view.annotation as? GPX.Waypoint {
-            if let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton {
-                if let imageData = NSData(contentsOfURL: waypoint.thumbnailURL!) {
-                    // blocks main thread
-                    if let image = UIImage(data: imageData) {
-                        thumbnailImageButton.setImage(image, forState: .Normal)
+            if let url = waypoint.thumbnailURL {
+                if view.leftCalloutAccessoryView == nil {
+                    view.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
+                }
+                
+                if let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton {
+                    if let imageData = NSData(contentsOfURL: waypoint.thumbnailURL!) { // blocks main thread
+                        if let image = UIImage(data: imageData) {
+                            thumbnailImageButton.setImage(image, forState: .Normal)
+                        }
                     }
                 }
             }
@@ -117,7 +122,9 @@ class GPXViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentat
             }
         } else if segue.identifier == Constants.EditWaypointSegue {
             if let waypoint = (sender as? MKAnnotationView)?.annotation as? EditableWaypoint {
-                if let ewvc = segue.destinationViewController.contentViewController as? EditWaypointViewController {
+                if let wivc = segue.destinationViewController.contentViewController as? WaypointImageViewController {
+                    wivc.waypoint = waypoint
+                } else if let ewvc = segue.destinationViewController.contentViewController as? EditWaypointViewController {
                     if let ppc = ewvc.popoverPresentationController {
                         let coordinatePoint = mapView.convertCoordinate(waypoint.coordinate, toPointToView: mapView)
                         ppc.sourceRect = (sender as! MKAnnotationView).popoverSourceRectForCoordinatePoint(coordinatePoint)
