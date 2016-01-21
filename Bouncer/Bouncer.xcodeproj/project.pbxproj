@@ -15,6 +15,7 @@
 		AB0AB1E71C4CDD070015BAAE /* BouncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AB1E61C4CDD070015BAAE /* BouncerTests.swift */; };
 		AB0AB1F21C4CDD070015BAAE /* BouncerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AB1F11C4CDD070015BAAE /* BouncerUITests.swift */; };
 		AB0AB2021C4CDEE20015BAAE /* BouncerBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AB2011C4CDEE20015BAAE /* BouncerBehavior.swift */; };
+		AB2897031C51159400C2CF90 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB2897021C51159400C2CF90 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AB0AB1F11C4CDD070015BAAE /* BouncerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncerUITests.swift; sourceTree = "<group>"; };
 		AB0AB1F31C4CDD070015BAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0AB2011C4CDEE20015BAAE /* BouncerBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncerBehavior.swift; sourceTree = "<group>"; };
+		AB2897021C51159400C2CF90 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0AB2011C4CDEE20015BAAE /* BouncerBehavior.swift */,
+				AB2897021C51159400C2CF90 /* Settings.bundle */,
 				AB0AB1D11C4CDD060015BAAE /* AppDelegate.swift */,
 				AB0AB1D31C4CDD060015BAAE /* ViewController.swift */,
 				AB0AB1D51C4CDD060015BAAE /* Main.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2897031C51159400C2CF90 /* Settings.bundle in Resources */,
 				AB0AB1DC1C4CDD060015BAAE /* LaunchScreen.storyboard in Resources */,
 				AB0AB1D91C4CDD060015BAAE /* Assets.xcassets in Resources */,
 				AB0AB1D71C4CDD060015BAAE /* Main.storyboard in Resources */,
@@ -491,6 +495,7 @@
 				AB0AB1F81C4CDD070015BAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0AB1F91C4CDD070015BAAE /* Build configuration list for PBXNativeTarget "BouncerTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				AB0AB1FB1C4CDD070015BAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0AB1FC1C4CDD070015BAAE /* Build configuration list for PBXNativeTarget "BouncerUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				AB0AB1FE1C4CDD070015BAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
